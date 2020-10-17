@@ -1,10 +1,8 @@
 # **Environment Properties**
 
 Please note, in trying to secure the database connection info, I moved the database connection information to its own file that should not be kept in source control.
-So in order for this project to run properly, you will need to create an env.php file with the correct configuration info inside of the private folder.
-
-I have included an env.example.php to give an idea of what this should look like.
-In the future, I would like to update this to be a real .env file instead.
+So in order for this project to run properly, you will need to create an env.properites file with the correct configuration info inside of the private folder.
+I have included a sample env.example.properties to give an idea of what this should look like.
 
 # Web Programmer Test Project
 

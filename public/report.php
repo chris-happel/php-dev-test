@@ -1,4 +1,20 @@
 <?php
+	include '../private/env.php';
+	function loadEnvionrmentProperties() {
+		// Grab env info.
+		$env_properties_str = file_get_contents("../private/env.properties");
+		if ($env_properties_str == FALSE) {
+			die("Could not open properties file!");
+		}
+
+		$env_properties = explode("\r\n", $env_properties_str);
+		foreach($env_properties as $property) {
+			putenv($property);
+		}
+
+		fclose($file);
+	}
+
 	function generateReport($db_connection) {
 		// Because we keep track of the comments to search for in lists,
 		// we lose a little bit of flexibility by not being able to add 
@@ -68,15 +84,14 @@
 		}
 	}
 
-	// Grab db info.
-	include '../private/env.php';
+	loadEnvionrmentProperties();
 
+	// Connect to db.
 	$db_server_name = getenv("DB_SERVER_NAME");
 	$db_username = getenv("DB_USERNAME");
 	$db_password = getenv("DB_PASSWORD");
 	$db_name = getenv("DB_NAME");
 
-	// Connect to db.
 	$db_connection = new mysqli($db_server_name, $db_username, $db_password, $db_name);
 	if ($db_connection->connect_error) {
 		die("Could not connect to the database: $db_connection->connect_error");
