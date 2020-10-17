@@ -3,4 +3,5 @@
 	putenv("DB_SERVER_NAME=localhost");
 	putenv("DB_USERNAME=username");
 	putenv("DB_PASSWORD=password");
+	putenv("DB_NAME=dbname");
 ?>
