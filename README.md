@@ -1,3 +1,11 @@
+# **Environment Properties**
+
+Please note, in trying to secure the database connection info, I moved the database connection information to its own file that should not be kept in source control.
+So in order for this project to run properly, you will need to create an env.php file with the correct configuration info inside of the private folder.
+
+I have included an env.example.php to give an idea of what this should look like.
+In the future, I would like to update this to be a real .env file instead.
+
 # Web Programmer Test Project
 
 Thanks for your interest in working at Sweetwater! We're always excited to meet awesome people. We've created this test to help us understand your programming chops.
